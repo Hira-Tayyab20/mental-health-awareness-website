@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindfulSpace – About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="confetti-container" aria-hidden="true"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">🌿 MindfulSpace</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="checkin.html" class="nav-link">Check‑In</a></li>
+        <li><a href="breathe.html" class="nav-link">Breathe</a></li>
+        <li><a href="resources.html" class="nav-link">Resources</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="about.html" class="nav-link active-page">About</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+        <span id="user-label" style="font-size:0.82rem;color:var(--accent-dark);font-weight:600;"></span>
+        <button id="auth-btn" class="btn-primary" style="padding:8px 18px;font-size:0.82rem;">Login / Sign Up</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ABOUT -->
+  <section class="section" style="padding-top:120px;min-height:90vh;">
+    <div class="container">
+      <h2 class="section-title">About MindfulSpace</h2>
+      <p class="section-sub">Our mission, disclaimer, and crisis support numbers.</p>
+
+      <div class="about-card glass">
+        <div class="disclaimer">
+          <h3>⚠️ Important Disclaimer</h3>
+          <p>MindfulSpace is for <strong>informational and self-support purposes only</strong>. It is <em>not</em> a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified mental health professional with any questions you may have.</p>
+          <p>If you or someone you know is in crisis, please reach out immediately:</p>
+          <ul class="crisis-list">
+            <li>🆘 <strong>Umang Helpline</strong> — call <strong>0317-4288665</strong> (Mon–Sat, 12pm–12am)</li>
+            <li>🏥 <strong>Edhi Foundation</strong> — call <strong>115</strong> (24/7 emergency helpline)</li>
+            <li>🚨 <strong>Emergency Services Pakistan</strong> — call <strong>1122</strong> (Rescue) or <strong>115</strong></li>
+          </ul>
+        </div>
+        <p class="about-body">MindfulSpace was built with care to offer a gentle starting point for mental wellness. You are not alone, and reaching out — even to a website — is a courageous first step. 🌱</p>
+      </div>
+
+      <!-- Mission cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:40px;">
+        <div class="glass" style="padding:28px 24px;border-radius:20px;">
+          <div style="font-size:2rem;margin-bottom:12px;">💚</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Our Mission</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">To make mental wellness tools accessible to everyone in Pakistan — free, stigma-free, and always available.</p>
+        </div>
+        <div class="glass" style="padding:28px 24px;border-radius:20px;">
+          <div style="font-size:2rem;margin-bottom:12px;">🔒</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Your Privacy</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Your mood data is stored only on your device or your personal account. We never sell or share your data with anyone.</p>
+        </div>
+        <div class="glass" style="padding:28px 24px;border-radius:20px;">
+          <div style="font-size:2rem;margin-bottom:12px;">🌱</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Always Growing</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">MindfulSpace is continuously updated with new resources and features. Have a suggestion? Use the Contact page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 MindfulSpace · Built with 💚 · Not a substitute for professional help</p>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div id="auth-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:2000;align-items:center;justify-content:center;padding:20px;">
+    <div class="glass" style="width:100%;max-width:420px;padding:36px 32px;position:relative;">
+      <button onclick="document.getElementById('auth-modal').style.display='none'" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted);">×</button>
+      <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">Welcome 🌿</h2>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">Sign in to sync your mood history across devices.</p>
+      <div style="display:flex;gap:8px;margin-bottom:24px;">
+        <button class="auth-tab active btn-primary" data-tab="login" style="flex:1;padding:10px;">Login</button>
+        <button class="auth-tab btn-secondary" data-tab="register" style="flex:1;padding:10px;">Register</button>
+      </div>
+      <div id="login-panel">
+        <div id="login-error" style="display:none;background:rgba(229,57,53,0.1);color:#c62828;padding:10px 14px;border-radius:10px;font-size:0.85rem;margin-bottom:14px;"></div>
+        <form id="login-form" style="display:flex;flex-direction:column;gap:14px;">
+          <input id="login-email" type="email" required placeholder="Email address" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="login-password" type="password" required placeholder="Password" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+      </div>
+      <div id="register-panel" style="display:none;">
+        <div id="register-error" style="display:none;background:rgba(229,57,53,0.1);color:#c62828;padding:10px 14px;border-radius:10px;font-size:0.85rem;margin-bottom:14px;"></div>
+        <form id="register-form" style="display:flex;flex-direction:column;gap:14px;">
+          <input id="reg-name" type="text" required placeholder="Your name" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="reg-email" type="email" required placeholder="Email address" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="reg-password" type="password" required placeholder="Password (min 8 chars)" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="reg-confirm" type="password" required placeholder="Confirm password" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <button type="submit" class="btn-primary">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

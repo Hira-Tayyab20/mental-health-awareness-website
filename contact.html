@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindfulSpace – Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="confetti-container" aria-hidden="true"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">🌿 MindfulSpace</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="checkin.html" class="nav-link">Check‑In</a></li>
+        <li><a href="breathe.html" class="nav-link">Breathe</a></li>
+        <li><a href="resources.html" class="nav-link">Resources</a></li>
+        <li><a href="contact.html" class="nav-link active-page">Contact</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+        <span id="user-label" style="font-size:0.82rem;color:var(--accent-dark);font-weight:600;"></span>
+        <button id="auth-btn" class="btn-primary" style="padding:8px 18px;font-size:0.82rem;">Login / Sign Up</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTACT -->
+  <section class="section" style="padding-top:120px;min-height:90vh;">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-sub">Questions, feedback, or just want to say hello?</p>
+      <div class="affirmation-card glass" style="max-width:640px;">
+        <div id="cf-msg" class="mood-message" aria-live="polite"></div>
+        <form id="contact-form" style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-size:0.8rem;font-weight:600;color:var(--text-muted);">Your Name</label>
+              <input id="cf-name" type="text" required placeholder="Ahmed Khan" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;background:rgba(255,255,255,0.6);"/>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-size:0.8rem;font-weight:600;color:var(--text-muted);">Email Address</label>
+              <input id="cf-email" type="email" required placeholder="you@example.com" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;background:rgba(255,255,255,0.6);"/>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:0.8rem;font-weight:600;color:var(--text-muted);">Subject</label>
+            <input id="cf-subject" type="text" required placeholder="What's on your mind?" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;background:rgba(255,255,255,0.6);"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="font-size:0.8rem;font-weight:600;color:var(--text-muted);">Message</label>
+            <textarea id="cf-message" required rows="5" placeholder="Your message..." style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;background:rgba(255,255,255,0.6);resize:vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="align-self:flex-start;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 MindfulSpace · Built with 💚 · Not a substitute for professional help</p>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div id="auth-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:2000;align-items:center;justify-content:center;padding:20px;">
+    <div class="glass" style="width:100%;max-width:420px;padding:36px 32px;position:relative;">
+      <button onclick="document.getElementById('auth-modal').style.display='none'" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted);">×</button>
+      <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:6px;">Welcome 🌿</h2>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">Sign in to sync your mood history across devices.</p>
+      <div style="display:flex;gap:8px;margin-bottom:24px;">
+        <button class="auth-tab active btn-primary" data-tab="login" style="flex:1;padding:10px;">Login</button>
+        <button class="auth-tab btn-secondary" data-tab="register" style="flex:1;padding:10px;">Register</button>
+      </div>
+      <div id="login-panel">
+        <div id="login-error" style="display:none;background:rgba(229,57,53,0.1);color:#c62828;padding:10px 14px;border-radius:10px;font-size:0.85rem;margin-bottom:14px;"></div>
+        <form id="login-form" style="display:flex;flex-direction:column;gap:14px;">
+          <input id="login-email" type="email" required placeholder="Email address" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="login-password" type="password" required placeholder="Password" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+      </div>
+      <div id="register-panel" style="display:none;">
+        <div id="register-error" style="display:none;background:rgba(229,57,53,0.1);color:#c62828;padding:10px 14px;border-radius:10px;font-size:0.85rem;margin-bottom:14px;"></div>
+        <form id="register-form" style="display:flex;flex-direction:column;gap:14px;">
+          <input id="reg-name" type="text" required placeholder="Your name" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="reg-email" type="email" required placeholder="Email address" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="reg-password" type="password" required placeholder="Password (min 8 chars)" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <input id="reg-confirm" type="password" required placeholder="Confirm password" style="font-family:'Poppins',sans-serif;padding:11px 14px;border:1.5px solid rgba(76,175,130,0.3);border-radius:12px;font-size:0.9rem;outline:none;"/>
+          <button type="submit" class="btn-primary">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
